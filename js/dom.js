@@ -1,10 +1,8 @@
 // render DOM nodes according to the playground definition
 function renderPlayground() {
   renderPositions();
-
-  console.log(playground)
-
   let playgroundNode = document.getElementById('playground')
+  playgroundNode.innerHTML = '';
 
   for (let rowIndex = playground.length - 1; rowIndex >= 0; rowIndex-- ) {
     let rowNode = createRow(rowIndex)

@@ -1,5 +1,3 @@
-var playground = (new Array(10).fill().map( el => (new Array(5).fill())));
-
 var objects = [{
     type: 'L',
     state: 'falling',

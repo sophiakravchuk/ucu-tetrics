@@ -10,6 +10,8 @@ const INITIAL_POSITIONS = {
   "I": [[9, 2], [8, 2], [7, 2]]
 }
 
-const DOWN = 40;
-const LEFT = 37;
+// Event keys
+const DOWN  = 40;
+const LEFT  = 37;
 const RIGHT = 39;
+const PAUSE = 32;
