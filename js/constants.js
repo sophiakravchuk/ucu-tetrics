@@ -13,4 +13,3 @@ const INITIAL_POSITIONS = {
 const DOWN = 40;
 const LEFT = 37;
 const RIGHT = 39;
-const ALLOWED_KEYS = [DOWN, LEFT, RIGHT];

@@ -9,14 +9,20 @@ function renderPositions() {
 
 function moveDown(obj) {
   console.log('moving down')
+  let currentObject = getCurrentObject();
+  console.log(currentObject);
 }
 
 function moveRight(obj) {
   console.log('moving right')
+  let currentObject = getCurrentObject();
+  console.log(currentObject);
 }
 
 function moveLeft(obj) {
   console.log('moving left')
+  let currentObject = getCurrentObject();
+  console.log(currentObject);
 }
 
 // function createObj() {}

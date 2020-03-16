@@ -1,0 +1,1 @@
+var getCurrentObject =  () => objects.find(object => object.state === 'falling');
