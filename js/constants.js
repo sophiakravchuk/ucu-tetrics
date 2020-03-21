@@ -1,14 +1,14 @@
+const TYPES = [ "L", "T", "I" ];
+const MOVE_RIGHT = 1;
+const MOVE_LEFT = -1;
+const PLAYGROUND_LENTH = 20;
+const PLAYGROUND_WIDTH = 10;
+
 const TYPE_COLORS = {
   "L": 'red',
   "T": 'purple',
   "I": 'green'
-}
-
-const INITIAL_POSITIONS = {
-  "L": [[9, 1], [8, 1], [8, 2], [8, 3]],
-  "T": [[9, 2], [9, 3], [9, 4], [8, 3]],
-  "I": [[9, 2], [8, 2], [7, 2]]
-}
+};
 
 // Event keys
 const DOWN  = 40;

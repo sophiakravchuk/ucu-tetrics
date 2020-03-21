@@ -1,6 +1,6 @@
 // render DOM nodes according to the playground definition
-function renderPlayground() {
-  renderPositions();
+function render() {
+  let playground = traverseObjects();
   let playgroundNode = document.getElementById('playground')
   playgroundNode.innerHTML = '';
 

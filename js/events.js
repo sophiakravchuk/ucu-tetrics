@@ -1,13 +1,15 @@
 document.addEventListener("keydown", event => {
+  if (!gameInterval) { return } // no events, if game is over or paused
+
   switch (event.keyCode) {
     case DOWN:
       moveDown();
       break;
     case LEFT:
-      moveRight();
+      moveHorizontal(MOVE_LEFT);
       break;
     case RIGHT:
-      moveLeft();
+      moveHorizontal(MOVE_RIGHT);
       break;
     case PAUSE:
       pauseGame();
