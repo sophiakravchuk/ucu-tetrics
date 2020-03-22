@@ -2,8 +2,16 @@ body {
   background: #f0f4f7;
 }
 
-#playground, #playground2 {
+#playground, header {
   margin: 20px;
+}
+
+header h1 {
+  font-family: 'Press Start 2P', cursive;
+}
+
+header h1.hidden {
+  display: none;
 }
 
 .row {
@@ -19,6 +27,7 @@ body {
   height: 10px;
   width: 10px;
   margin: 1px;
+  transition: border-color 2s;
 }
 
 .cell.red {

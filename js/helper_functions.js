@@ -34,7 +34,7 @@ const getInitialPositions = (TYPE) => {
       [PLAYGROUND_LENTH + 3, parseInt(PLAYGROUND_WIDTH / 2) + 2],
       [PLAYGROUND_LENTH + 2, parseInt(PLAYGROUND_WIDTH / 2) + 2],
       [PLAYGROUND_LENTH + 1, parseInt(PLAYGROUND_WIDTH / 2) + 2],
-      [PLAYGROUND_LENTH, parseInt(PLAYGROUND_WIDTH / 2) + 2],
+      [PLAYGROUND_LENTH, parseInt(PLAYGROUND_WIDTH / 2) + 2]
     ]
   }
 }
