@@ -1,10 +1,12 @@
+render();
+
 function canMoveDown (object, step = 1) {
   const playground = traverseObjects()
 
   for (const [rowIndex, cellIndex] of object.position) {
     const nextRow = rowIndex - step
     if (nextRow < 0) return false // run out of playground
-    if (nextRow > PLAYGROUND_LENTH - 1) return true // object is still outside the playground
+    if (nextRow > PLAYGROUND_LENTH - 1) continue // object is still outside the playground
 
     const ownCell = object.position.find(([r, c]) => (r === nextRow && c === cellIndex))
     if (ownCell) continue
@@ -22,6 +24,7 @@ function canMoveHorizontal (direction, object) {
     const nextCell = cellIndex + direction
 
     if (nextCell < 0 || nextCell > PLAYGROUND_WIDTH - 1) return false // run out of playground
+    if (rowIndex > PLAYGROUND_LENTH - 1) continue;
 
     const ownCell = object.position.find(([r, c]) => (r === rowIndex && c === nextCell))
     if (ownCell) continue
@@ -52,10 +55,8 @@ function checkAndDestroy () {
   }
   if (destroyed) {
     objects.forEach(object => moveDown(object))
-    render()
+    reRender()
   }
-
-  if (playground.find(row => !row.includes(undefined))) { checkAndDestroy() }
 };
 
 function compactObject (object) {
@@ -83,7 +84,7 @@ function moveDown (object) {
     }
     currentRow--
   }
-  render()
+  reRender()
 }
 
 function moveHorizontal (direction) {
@@ -91,7 +92,7 @@ function moveHorizontal (direction) {
   if (!canMoveHorizontal(direction, currentObject)) return
 
   currentObject.position.forEach(position => (position[1] += direction))
-  render()
+  reRender()
 }
 
 function pauseGame () {
@@ -111,16 +112,19 @@ var gameInterval = setInterval(() => {
   const playground = traverseObjects()
   const currentObject = getCurrentObject()
 
+  if (playground.find(row => !row.includes(undefined))) { 
+    return checkAndDestroy()
+  }
+
   if (!canMoveDown(currentObject, 1)) {
     currentObject.state = 'static'
     if (playground[PLAYGROUND_LENTH - 1].find(el => el)) return gameOver()
 
-    checkAndDestroy()
     return createObj()
   };
 
   // 2. move object down
   currentObject.position.forEach(position => (position[0] -= 1))
 
-  render()
-}, 300)
+  reRender()
+}, 200)
