@@ -3,7 +3,7 @@ body {
 }
 
 #playground, #playground2 {
-  margin: 20px 200px;
+  margin: 20px;
 }
 
 .row {
@@ -15,10 +15,10 @@ body {
   border: 1px solid;
   background:#ffffff;
   border-color: #c3cfd9;
-  border-radius: 3px;
+  border-radius: 2px;
   height: 20px;
   width: 20px;
-  margin: 2px;
+  margin: 1px;
 }
 
 .cell.red {
