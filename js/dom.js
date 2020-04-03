@@ -26,6 +26,16 @@ function reRender () {
   }
 }
 
+function destroyAnimation(rowIndex) {
+  const playground = traverseObjects()
+  const rowNode = document.getElementById(`row-${rowIndex}`)
+  const cellNodes = [...rowNode.getElementsByClassName('cell')]
+
+  for (let cellIndex = 0; cellIndex < playground[rowIndex].length; cellIndex++) {
+    cellNodes[cellIndex].className = `${cellNodes[cellIndex].className} destroying`
+  }
+}
+
 // Creates <div class="row" id="row-9">
 function createRow (rowIndex) {
   const rowNode = document.createElement('div')

@@ -1,7 +1,7 @@
 const TYPES = ['L', 'T', 'I']
 const MOVE_RIGHT = 1
 const MOVE_LEFT = -1
-const PLAYGROUND_LENTH = 35
+const PLAYGROUND_LENTH = 40
 const PLAYGROUND_WIDTH = 20
 
 const TYPE_COLORS = {

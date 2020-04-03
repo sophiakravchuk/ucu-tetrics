@@ -35,14 +35,40 @@ function canMoveHorizontal (direction, object) {
   return true
 }
 
+// function checkAndDestroy () {
+//   const playground = traverseObjects()
+//   let destroyed = []
+
+//   for (let rowIndex = playground.length - 1; rowIndex >= 0; rowIndex--) {
+//     if (playground[rowIndex].includes(undefined)) continue
+
+//     destroyed.push(rowIndex)
+
+//     objects.forEach(object => {
+//       let updated
+//       for (let i = 0; i < object.position.length; i++) {
+//         if (object.position[i][0] !== rowIndex) continue
+//         updated = delete object.position[i]
+//       }
+//       updated && compactObject(object)
+//     })
+//   }
+//   console.log(destroyed);
+//   if (destroyed.lenth > 0) {
+//     destroyed.forEach(rowIndex => destroyAnimation(rowIndex))
+//     objects.forEach(object => moveDown(object))
+//     reRender()
+//   }
+// };
+
 function checkAndDestroy () {
   const playground = traverseObjects()
-  let destroyed = false
+  let destroyed = []
 
   for (let rowIndex = playground.length - 1; rowIndex >= 0; rowIndex--) {
     if (playground[rowIndex].includes(undefined)) continue
 
-    destroyed = true
+    destroyed.push(rowIndex)
 
     objects.forEach(object => {
       let updated
@@ -53,9 +79,9 @@ function checkAndDestroy () {
       updated && compactObject(object)
     })
   }
-  if (destroyed) {
+  if (destroyed.length > 0) {
     objects.forEach(object => moveDown(object))
-    reRender()
+    destroyed.forEach(rowIndex => destroyAnimation(rowIndex))
   }
 };
 

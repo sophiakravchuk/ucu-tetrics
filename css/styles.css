@@ -44,3 +44,9 @@ header h1.hidden {
   background:#8dd7cf;
   border-color: #1aae9f;
 }
+
+.cell.destroying {
+  background: #ff8b33 !important;
+  border-color: #ff6f00 !important;;
+  transition: border-color 0s, background 0s;
+}
